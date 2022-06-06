@@ -1,6 +1,5 @@
 _BASE_: "Base-ICDAR15-Polygon.yaml"
 MODEL:
-  WEIGHTS: "weights/TESTR/pretrain_testr_R_50_polygon.pth"
   RESNETS:
     DEPTH: 50
   TRANSFORMER:
@@ -26,3 +25,4 @@ SOLVER:
 TEST:
   EVAL_PERIOD: 1000
 OUTPUT_DIR: "output/TESTR/icdar15/TESTR_R_50_Polygon"
+WEIGHTS: "weights/TESTR/pretrain_testr_R_50_polygon.pth"
