@@ -38,10 +38,10 @@ class DeformableTransformer(nn.Module):
                                                           num_feature_levels, nhead, enc_n_points)
         self.encoder = DeformableTransformerEncoder(encoder_layer, num_encoder_layers)
 
-        decoder_layer = DeformableCompositeTransformerDecoderLayer(d_model, dim_feedforward,
+        decoder_layer = DeformableTransformerDecoderLayer(d_model, dim_feedforward,
                                                           dropout, activation,
                                                           num_feature_levels, nhead, dec_n_points)
-        self.decoder = DeformableCompositeTransformerDecoder(decoder_layer, num_decoder_layers, return_intermediate_dec)
+        self.decoder = DeformableTransformerDecoder(decoder_layer, num_decoder_layers, return_intermediate_dec)
 
         self.level_embed = nn.Parameter(torch.Tensor(num_feature_levels, d_model))
 
